@@ -1,0 +1,117 @@
+{
+    "openapi": "3.0.0",
+    
+    "info": {
+        "title": "API desafio",
+        "description": "API desafio final GA",
+        "version": "0.0.1"
+    },
+
+    "servers": [
+       {
+           "url": "http://localhost:5000",
+           "description": "Ambiente de desenvolvimento"
+        }
+    ],
+
+    "paths": {
+        "/register": {
+          "post": {
+            "summary": "Cadastro de candidato",
+            "description": "Roda de cadastro de usuário, recebe: nomeCompleto, cargoPretendido, nascimento, estadoCivil, sexo, profissao, cep, endereco, bairro, cidade, estado, tel, celular, email, identidade, cpf_digitado, possuiVeiculo, habilitacao",
+            "tags": ["candidate"],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "properties": {
+                            "nomeCompleto": {
+                                "type": "string"
+                            },
+                            "cargoPretendido": {
+                                "type": "string"
+                            },
+                            "nascimento": {
+                                "type": "string"
+                            },
+                            "estadoCivil": {
+                                "type": "string"
+                            },
+                            "sexo": {
+                                "type": "string"
+                            },
+                            "profissao": {
+                                "type": "string"
+                            },
+                            "cep": {
+                                "type": "string"
+                            },
+                            "endereco": {
+                                "type": "string"
+                            },
+                            "bairro": {
+                                "type": "string"
+                            },
+                            "cidade": {
+                                "type": "string"
+                            },
+                            "estado": {
+                                "type": "string"
+                            },
+                            "tel": {
+                                "type": "number"
+                            },
+                            "celular": {
+                                "type": "number"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "identidade": {
+                                "type": "number"
+                            },
+                            "cpf_digitado": {
+                                "type": "number"
+                            },
+                            "possuiVeiculo": {
+                                "type": "string"
+                            },
+                            "habilitacao": {
+                                "type": "string"
+                            }
+
+                        }
+                     },
+                     "examples": {
+                         "Eu mesma": {
+                             "value": {
+                                "nomeCompleto": "Diana Salmazo",
+                                "cargoPretendido": "Dev Full Stack",
+                                "nascimento": "13/08/1987",
+                                "estadoCivil": "Solteira",
+                                "sexo": "Feminino",
+                                "profissao": "Estudante",
+                                "cep": "00000-000",
+                                "endereco": "XXXXXXXXXXXXX, n X, apt X",
+                                "bairro": "XXXXXXXXXXXX",
+                                "cidade": "XXXXXXXXXXXXX",
+                                "estado": "XX",
+                                "tel": "6130303030",
+                                "celular": "61999999999",
+                                "email": "qualquer@qualquer.com",
+                                "identidade": "1234567",
+                                "cpf_digitado": "117.348.527-98",
+                                "possuiVeiculo": "Sim",
+                                "habilitacao": "AB"
+                             }
+                         }                         
+
+                     }
+                     
+                 }
+           }
+         }
+        }
+      }
+    }
+}
