@@ -8,20 +8,12 @@ const app = express();
 const cors = require('cors');
 
 
-//mongoose = orm 
-
 mongoose.connect(process.env.MONGO_URL, {
 
 });
 
-var corsOptions = {
-    "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": true,
-    "optionsSuccessStatus": 204
-  }
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 app.use(routes);
