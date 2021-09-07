@@ -4,7 +4,7 @@ const routes = new express.Router();
 
 
 routes.options('/register')
-routes.post('/register', cors(), function (req, res, next) {
+routes.post('/register', CandidateController.register, cors(), function (req, res, next) {
     res.json({ msg: 'This is CORS-enabled for all origins!' })
 })
 
