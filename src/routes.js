@@ -3,10 +3,11 @@ const CandidateController = require('./controllers/CandidateController');
 const routes = new express.Router();
 
 
-routes.post('/register', CandidateController.register);
-
-routes.get('/', (req, resp) => {
-    resp.send('Servidor online - Diana Salmazo');
+routes.options('/register',  CandidateController.register)
+routes.post('/register', cors(), function (req, res, next) {
+    res.json({ msg: 'This is CORS-enabled for all origins!' })
 })
 
 module.exports = routes;
+
+
